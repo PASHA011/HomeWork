@@ -9,7 +9,9 @@ namespace HomeWork
         static void Main(string[] args)
         {
             CreditCard creditCard = new CreditCard();
-
+          var result=  DateTime.Now.ToString("yy");
+        int  dateOfYear=  Int16.Parse(result);
+         
             try
             {
                 Console.Write("kredi kartınızın numarasını giriniz : ");
@@ -33,7 +35,7 @@ namespace HomeWork
                     return;
                 }
 
-                else if (creditCard.ExpireDate.Length != 5 && (dateIntFormat[0] <= DateTime.Now.Month && dateIntFormat[1] + 2000 < DateTime.Now.Year) || dateIntFormat[1] + 2000 < DateTime.Now.Year)
+                else if (creditCard.ExpireDate.Length != 5 && (dateIntFormat[0] <= DateTime.Now.Month && dateIntFormat[1] < dateOfYear) || dateIntFormat[1] < dateOfYear)
                 {
                     Console.WriteLine("son kullanma tarihi yalnış girdiniz ");
                     return;
