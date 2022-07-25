@@ -5,7 +5,6 @@ namespace HomeWork
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             CreditCard creditCard = new CreditCard();
@@ -16,35 +15,33 @@ namespace HomeWork
             {
                 Console.Write("kredi kartınızın numarasını giriniz : ");
                 creditCard.CardNumber = Console.ReadLine();
+                if (creditCard.CardNumber.Length != 16)
+                {
+                    throw new creditCardException("kart numaranız 16 karater olmalı");
+                }
                 Console.Write(" Cvc numarasını giriniz : ");
                 creditCard.Cvc = Convert.ToInt32(Console.ReadLine());
+                if (creditCard.Cvc > 999 || creditCard.Cvc < 0)
+                {
+                    throw new creditCardException("cvc numarası 3 numaradan oluşmaktadır");
+                }
+
+
                 Console.Write(" son kullanma tarihi (01/22) formatında olacak şekilde giriniz : ");
                 creditCard.ExpireDate = Console.ReadLine();
 
                 string[] dates = creditCard.ExpireDate.Split(new char[] { '/' });
                 int[] dateIntFormat = Array.ConvertAll(dates, int.Parse);
 
-                if (creditCard.CardNumber.Length != 16)
+                if (creditCard.ExpireDate.Length != 5 && (dateIntFormat[0] <= DateTime.Now.Month && dateIntFormat[1] < dateOfYear) || dateIntFormat[1] < dateOfYear)
                 {
-                    Console.WriteLine("kart numaranız 16 karater olmalı");
-                    return;
+                    
+                    throw new creditCardException("son kullanma tarihi yalnış girdiniz");
                 }
-                else if (creditCard.Cvc > 999 || creditCard.Cvc < 0)
-                {
-                    Console.WriteLine("cvc numarası 3 numaradan oluşmaktadır");
-                    return;
-                }
-
-                else if (creditCard.ExpireDate.Length != 5 && (dateIntFormat[0] <= DateTime.Now.Month && dateIntFormat[1] < dateOfYear) || dateIntFormat[1] < dateOfYear)
-                {
-                    Console.WriteLine("son kullanma tarihi yalnış girdiniz ");
-                    return;
-                }
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Exception creditCardException = new Exception("Kredi bilgileri yalnış girildi");
+                new creditCardException(ex.Message);
 
             }
 
