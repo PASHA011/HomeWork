@@ -19,11 +19,11 @@ namespace HomeWork
                 {
                     throw new CreditCardException("kart numaranız 16 karater olmalı");
                 }
-                Console.Write(" Cvc numarasını giriniz : ");
-                creditCard.Cvc = Convert.ToInt32(Console.ReadLine());
-                if (creditCard.Cvc > 999 || creditCard.Cvc < 0)
+                Console.Write(" Cvv numarasını giriniz : ");
+                creditCard.Cvv = Convert.ToInt32(Console.ReadLine());
+                if (creditCard.Cvv > 999 || creditCard.Cvv < 0)
                 {
-                    throw new CreditCardException("cvc numarası 3 numaradan oluşmaktadır");
+                    throw new CreditCardException("cvv numarası 3 numaradan oluşmaktadır");
                 }
                 if (creditCard.ExpireDate.Length != 5)
                 {
@@ -36,9 +36,7 @@ namespace HomeWork
                 {
                     throw new CreditCardException("kullanma tarihi geçmiş");
                 }
-                Console.WriteLine("Kart Numaranız : " + creditCard.CardNumber);
-                Console.WriteLine("Kartınızın son kullanma tarihi : " + creditCard.ExpireDate);
-                Console.WriteLine("Kartınızın cvc numarası : " + creditCard.Cvc);
+                creditCard.CreditCardInfo();
             }
             catch (Exception ex)
             {
