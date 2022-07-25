@@ -25,18 +25,20 @@ namespace HomeWork
                 {
                     throw new CreditCardException("cvv numarası 3 numaradan oluşmaktadır");
                 }
+                Console.Write(" son kullanma tarihi giriniz : ");
+                creditCard.ExpireDate = (Console.ReadLine());
+                string[] dates = creditCard.ExpireDate.Split(new char[] { '/' });
+                int[] dateIntFormat = Array.ConvertAll(dates, int.Parse);
                 if (creditCard.ExpireDate.Length != 5)
                 {
                     throw new CreditCardException("kullanma tarihi yalnış  girdiniz");
                 }
-                string[] dates = creditCard.ExpireDate.Split(new char[] { '/' });
-                int[] dateIntFormat = Array.ConvertAll(dates, int.Parse);
 
                 if ((dateIntFormat[0] <= DateTime.Now.Month && dateIntFormat[1] < dateOfYear) || dateIntFormat[1] < dateOfYear)
                 {
                     throw new CreditCardException("kullanma tarihi geçmiş");
                 }
-                creditCard.CreditCardInfo();
+                Console.WriteLine(creditCard.CreditCardInfo()); 
             }
             catch (Exception ex)
             {
