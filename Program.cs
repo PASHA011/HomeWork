@@ -25,8 +25,6 @@ namespace HomeWork
                 {
                     throw new creditCardException("cvc numarası 3 numaradan oluşmaktadır");
                 }
-
-
                 Console.Write(" son kullanma tarihi (01/22) formatında olacak şekilde giriniz : ");
                 creditCard.ExpireDate = Console.ReadLine();
 
@@ -38,7 +36,6 @@ namespace HomeWork
                     
                     throw new creditCardException("son kullanma tarihi yalnış girdiniz");
                 }
-
                 Console.WriteLine("Kart Numaranız : " + creditCard.CardNumber);
                 Console.WriteLine("Kartınızın son kullanma tarihi : " + creditCard.ExpireDate);
                 Console.WriteLine("Kartınızın cvc numarası : " + creditCard.Cvc);
