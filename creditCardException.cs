@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HomeWork
 {
-   public class creditCardException:Exception
+   public class CreditCardException:Exception
     {
-        public creditCardException(string message)
+        public CreditCardException(string message)
         {
             Console.WriteLine(message);
         }
