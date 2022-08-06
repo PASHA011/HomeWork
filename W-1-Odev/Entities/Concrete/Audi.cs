@@ -1,5 +1,4 @@
 ﻿
-using Entities.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Audi:Car,IEntity
+    public class Audi:Car
     {
-        public Audi() 
-        {
-            Brand = "Audi";
-            Doors = 5;
-            Engine = 1;
-            Wheel = 4;
-        }
-
+      
+        public string Brand { get; set ; }
+        public int Doors { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Engine { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Wheel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

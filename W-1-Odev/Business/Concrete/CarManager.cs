@@ -11,9 +11,9 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         Car _car;
-        public  List<Car> GetAll()
+        public void GetAll()
         {
-            return _car.GetAll();
+            
         }
     }
 }
