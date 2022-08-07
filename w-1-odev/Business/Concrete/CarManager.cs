@@ -10,7 +10,7 @@ namespace Business.Concrete
 {
     public class CarManager : ICarService
     {
-        Car _car;
+        ICar _car;
         public void GetAll()
         {
             
