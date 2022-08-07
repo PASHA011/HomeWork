@@ -7,7 +7,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            Audi bmw = new Audi();
+            ICar car = new Audi();
+            Console.WriteLine(car.Brand);
+            
         }
     }
 }

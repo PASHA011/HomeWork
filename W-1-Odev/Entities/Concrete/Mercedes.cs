@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Mercedes : Car
+    public class Mercedes : ICar
     {
-        public string Brand { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Doors { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Engine { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Wheel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Brand { get { return "Mercedes"; } }
+        public int Doors { get { return 2; } }
+        public int Engine { get { return 2; } }
+        public int Wheel { get { return 8; } }
+
+        public void Creat()
+        {
+            Console.WriteLine("");
+        }
     }
 }
