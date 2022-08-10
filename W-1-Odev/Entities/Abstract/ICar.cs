@@ -8,14 +8,8 @@ namespace Entities
 {
     public interface ICar
     {
-        public void GetAll()
-        {
-            Console.WriteLine("brand : " + Brand + " , doors : " + Doors +
-                " , engine : " + Engine + " , wheel : " + Wheel);
-        }
-        public void Creat();
-
-
+          public void Creat();
+        
         public string Brand { get; }
         public int Doors { get; }
         public int Engine { get; }

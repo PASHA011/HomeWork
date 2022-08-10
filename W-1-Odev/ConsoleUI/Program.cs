@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Business.Concrete;
+using Entities;
 using System;
 
 namespace ConsoleUI
@@ -9,7 +10,6 @@ namespace ConsoleUI
         {
             ICar car = new Audi();
             Console.WriteLine(car.Brand);
-            
         }
     }
 }

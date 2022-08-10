@@ -17,7 +17,12 @@ namespace Entities
 
         public void Creat()
         {
-            Console.WriteLine("new car has been created ");
+            Console.WriteLine("new car has been created(Audi) ");
+        }
+
+      public void Getall()
+        {
+            //return Brand;
         }
     }
 }

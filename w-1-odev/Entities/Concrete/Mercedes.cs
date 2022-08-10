@@ -15,7 +15,7 @@ namespace Entities
 
         public void Creat()
         {
-            Console.WriteLine("");
+            Console.WriteLine("new car has been created (Mercdes)");
         }
     }
 }
