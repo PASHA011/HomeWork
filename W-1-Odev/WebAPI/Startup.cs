@@ -50,11 +50,35 @@ namespace WebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Car Project",
+                    Version = "v420"
+                });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Eriþim saðlayabilmek için buraya Bearer þemaya göre tokeninizi giriniz \r\n\r\n" +
+                    "þema þu þekilde:  önce 'Bearer' giriniz ardýndan [boþluk] býrakarak tokeninizi giriniz.\r\n\r\nÖrnek: \"Bearer 1safsfsdfdfd\"",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    {
+                        new OpenApiSecurityScheme {
+                            Reference = new OpenApiReference {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                 });
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

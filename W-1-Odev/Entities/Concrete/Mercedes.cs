@@ -9,13 +9,13 @@ namespace Entities
     public class Mercedes : ICar
     {
         public string Brand { get { return "Mercedes"; } }
-        public int Doors { get { return 2; } }
-        public int Engine { get { return 2; } }
-        public int Wheel { get { return 8; } }
+        public string Doors { get { return "2"; } }
+        public string Engine { get { return "2"; } }
+        public string Wheel { get { return "8"; } }
 
-        public void Creat()
+        public string GetMercedesDetiles()
         {
-            Console.WriteLine("");
+            return "Brand: " + Brand + " , number of doors: " + Doors + " , number of Engine: " + Engine + "number of Wheel: " + Wheel;
         }
     }
 }

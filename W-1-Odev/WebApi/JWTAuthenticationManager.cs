@@ -32,9 +32,10 @@ namespace WebApi
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, userName)
+                    new Claim(ClaimTypes.Name, userName),
+                    new Claim("Title", "IBO THE")
                 }),
-                //benim token nezaman sonlanacak
+
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
             };

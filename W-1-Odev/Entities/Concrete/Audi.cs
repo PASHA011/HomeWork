@@ -11,18 +11,13 @@ namespace Entities
     {
 
         public string Brand { get { return "Audi"; } }
-        public int Doors { get { return 5; } }
-        public int Engine { get { return 1; } }
-        public int Wheel { get { return 4; } }
+        public string Doors { get { return "5"; } }
+        public string Engine { get { return "1"; } }
+        public string Wheel { get { return "4"; } }
 
-        public void Creat()
+        public string GetAudiDetiles()
         {
-            Console.WriteLine("new car has been created(Audi) ");
-        }
-
-      public void Getall()
-        {
-            //return Brand;
+            return "Brand: " + Brand + " , number of doors: " + Doors + " , number of Engine: " + Engine + " , number of Wheel: " + Wheel;
         }
     }
 }

@@ -10,19 +10,16 @@ namespace Business.Concrete
 {
     public class AudiManager : ICarService
     {
-        List<Audi> _audi;
-        public AudiManager(List<Audi> audi )
+        Audi _audi;
+        public AudiManager(Audi audi )
         {
             _audi = audi;
         }
-        public void Creat(ICar car)
-        {
        
-        }
 
-        public List<Audi> GetAll()
+        public string GetAll()
         {
-            return _audi ;
+            return _audi.Doors+"/"+_audi.Brand+"/"+_audi.Engine+"/"+_audi.Wheel ;
         }
     }
 }

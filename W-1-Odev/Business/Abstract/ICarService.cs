@@ -9,7 +9,7 @@ namespace Business.Abstract
 {
    public interface ICarService
     {
-        List<Audi> GetAll();
-        public void Creat(ICar car);
+        string GetAll();
+       
     }
 }

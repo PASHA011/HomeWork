@@ -1,5 +1,4 @@
-﻿using Business.Concrete;
-using Entities;
+﻿using Entities;
 using System;
 
 namespace ConsoleUI
@@ -8,8 +7,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ICar car = new Audi();
-            Console.WriteLine(car.Brand);
+            BMW bmw = new BMW();
+            
         }
     }
 }
