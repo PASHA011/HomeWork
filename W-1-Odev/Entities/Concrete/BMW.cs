@@ -9,14 +9,13 @@ namespace Entities
     public class BMW : ICar
     {
         public string Brand { get { return "BMW"; } }
-        public int Doors { get { return 2; } }
-        public int Engine { get { return 2; } }
-        public int Wheel { get { return 6; } }
+        public string Doors { get { return "2"; } }
+        public string Engine { get { return "2"; } }
+        public string Wheel { get { return "6"; } }
 
-        public void Creat()
+      public string GetBmwDetiles()
         {
-            Console.WriteLine("new car has been created (BMW)");
-
+            return "Brand: "+ Brand+ " , number of doors: "+Doors+ " , number of Engine: "+Engine+ " , number of Wheel: "+ Wheel;
         }
     }
 }
